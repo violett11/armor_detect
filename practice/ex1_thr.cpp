@@ -23,6 +23,5 @@ int main()
     threshold(gray,src2,150,255,THRESH_BINARY_INV);
     std::cout<<countNonZero(src2)<<"\n";  
     imwrite(OUT + "src1.jpg",src1);  
-    imwrite(OUT + "src2.jpg",src2);  
-    return 0;
+    imwrite(OUT + "src2.jpg",src2);    
 }
