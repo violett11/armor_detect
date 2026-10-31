@@ -49,17 +49,17 @@ int main()
         std::cout<<"failed";
         return -1;
     }
-    double fps   = cap.get(CAP_PROP_FPS);            // 帧率
-    int    w     = (int)cap.get(CAP_PROP_FRAME_WIDTH);   // 宽
-    int    h     = (int)cap.get(CAP_PROP_FRAME_HEIGHT);  // 高
+    double fps=cap.get(CAP_PROP_FPS);// 帧率
+    int w=(int)cap.get(CAP_PROP_FRAME_WIDTH);   // 宽
+    int h=(int)cap.get(CAP_PROP_FRAME_HEIGHT);  // 高
     Mat frame;
     /*for(int i=1;i<=50;i++)
     {
         if(!cap.read(frame))     return -1;
     }*/
     VideoWriter writer(OUT+ "p06_ex.avi",
-                       VideoWriter::fourcc('M', 'J', 'P', 'G'),   // 编码
-                       fps,                                       // 帧率
+                       VideoWriter::fourcc('M','J','P','G'),   // 编码
+                       fps,// 帧率
                        Size(w, h));
     namedWindow("compare",WINDOW_NORMAL);
     resizeWindow("compare",1200,470);
@@ -145,7 +145,7 @@ int main()
         putText(sideBySide, "RAW",    Point(20, 40), FONT_HERSHEY_SIMPLEX,1.0, Scalar(0, 235, 255), 2);               
         putText(sideBySide, "RESULT", Point(frame.cols + 20, 40),FONT_HERSHEY_SIMPLEX, 1.0, Scalar(0, 235, 255), 2);
         imshow("compare", sideBySide);
-        int key=waitKey(80);                   // 固定 40ms
+        int key=waitKey(80);
         if (key=='q') break;
     }
     cap.release();
